@@ -10,8 +10,7 @@ terraform {
 provider "azurerm" {
   features {}
 
-  # IMPORTANT:
-  # We are using least-privilege RBAC (blob-only),
-  # so Terraform must NOT try to register providers at subscription scope.
-  resource_provider_registrations = "none"
+  # Disable subscription-level provider registration
+  # Required for least-privilege (blob-only RBAC)
+  skip_provider_registration = true
 }
