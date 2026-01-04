@@ -1,9 +1,9 @@
 resource "azuread_user" "batman" {
-  display_name        = var.user_name
-  user_principal_name = var.user_principal_name
+  display_name        = "Batman"
+  user_principal_name = "batman@yourtenant.onmicrosoft.com"
   mail_nickname       = "batman"
 
-  password = var.initial_password
+  password = "Batm@n@123!"
 
   force_password_change = true
 }
