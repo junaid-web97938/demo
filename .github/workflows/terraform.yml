@@ -1,16 +1,16 @@
-name: Terraform Azure AD Batman User
+name: Terraform Azure AD Batman
 
 on:
   push:
     branches:
-      - class
+      - class  # Only runs when pushing to the class branch
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout learning
         uses: actions/checkout@v4
 
       - name: Setup Terraform
@@ -35,5 +35,3 @@ jobs:
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-
-
