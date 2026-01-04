@@ -4,6 +4,5 @@ resource "azuread_user" "batman" {
   mail_nickname       = "batman"
 
   password = "Batm@n@123!"
-
   force_password_change = true
 }
