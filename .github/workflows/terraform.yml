@@ -1,9 +1,9 @@
-name: Terraform Azure AD User - Hardcoded
+name: Terraform Azure AD User
 
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:  # Allows manual run
+  workflow_dispatch: # allows manual run
 
 permissions:
   contents: read
@@ -21,12 +21,16 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: 6a35d33f-b6f9-4101-bd91-ef2bfb93822f
+        working-directory: terraform-azure-user
 
       - name: Terraform Plan
         run: terraform plan
-        working-directory: 6a35d33f-b6f9-4101-bd91-ef2bfb93822f
+        working-directory: terraform-azure-user
+        env:
+          TF_VAR_tenant_id: ${{ vars.TENANT_ID }}
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        working-directory: 6a35d33f-b6f9-4101-bd91-ef2bfb93822f
+        working-directory: terraform-azure-user
+        env:
+          TF_VAR_tenant_id: ${{ vars.TENANT_ID }}

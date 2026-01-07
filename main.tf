@@ -5,7 +5,7 @@ resource "azuread_user" "batman" {
   display_name          = "Batman"
   mail_nickname         = "batman"
 
-  password              = "P@ssword1234!"  # <-- Hard-coded password
+  password              = random_password.batman.result
   force_password_change = true
   account_enabled       = true
 }

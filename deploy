@@ -1,3 +1,0 @@
-git add .
-git commit -m "Add hard-coded Terraform for Batman user"
-git push origin main
