@@ -1,0 +1,11 @@
+data "azuread_client_config" "current" {}
+
+resource "azuread_user" "batman" {
+  user_principal_name   = "batman@${data.azuread_client_config.current.tenant_domain}"
+  display_name          = "Batman"
+  mail_nickname         = "batman"
+
+  password              = "P@ssword1234!"
+  force_password_change = true
+  account_enabled       = true
+}
