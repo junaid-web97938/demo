@@ -3,8 +3,4 @@ variable "tenant_id" {
   type        = string
 }
 
-variable "user_password" {
-  description = "Initial password for Batman"
-  type        = string
-  sensitive   = true
-}
+
