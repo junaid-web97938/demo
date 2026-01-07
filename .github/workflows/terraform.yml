@@ -3,10 +3,9 @@ name: Terraform Azure AD User
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
-  workflow_dispatch: # allows manual run
+    branches: [main]
 
 permissions:
   contents: read
