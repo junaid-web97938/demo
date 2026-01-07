@@ -8,4 +8,4 @@ resource "azuread_user" "batman" {
   password              = "P@ssword1234!"
   force_password_change = true
   account_enabled       = true
-}
+} ## test
