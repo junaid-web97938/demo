@@ -1,16 +1,10 @@
-
- # Triggers the workflow on push or pull request events but only for the "main" branch
- 
-name: Terraform CI
+name: Terraform Azure AD User (Repo Variables + Random Password)
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
-
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -18,10 +12,9 @@ permissions:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Terraform workflow is valid"
-    steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Terraform
@@ -34,10 +27,8 @@ jobs:
         run: terraform plan
         env:
           TF_VAR_tenant_id: ${{ vars.TENANT_ID }}
-          TF_VAR_user_password: ${{ vars.BATMAN_PASSWORD }}
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
         env:
           TF_VAR_tenant_id: ${{ vars.TENANT_ID }}
-          TF_VAR_user_password: ${{ vars.BATMAN_PASSWORD }}
