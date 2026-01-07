@@ -1,8 +1,9 @@
-name: Terraform Azure AD User - Repo Variables
+name: Terraform Azure AD User
 
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch: # allows manual run
 
 permissions:
   contents: read
@@ -12,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Terraform
@@ -20,15 +21,16 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform-azure-user
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: terraform-azure-user
         env:
           TF_VAR_tenant_id: ${{ vars.TENANT_ID }}
-          TF_VAR_user_password: ${{ vars.BATMAN_PASSWORD }}
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        working-directory: terraform-azure-user
         env:
           TF_VAR_tenant_id: ${{ vars.TENANT_ID }}
-          TF_VAR_user_password: ${{ vars.BATMAN_PASSWORD }}
