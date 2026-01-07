@@ -1,4 +1,4 @@
-name: Terraform Azure AD User (Repo Variables + Random Password)
+name: CI
 
 on:
   push:
