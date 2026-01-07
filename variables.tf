@@ -1,4 +1,3 @@
-variable "tenant_id" {
-  description = "Azure AD Tenant ID"
-  type        = string
-}
+variable "tenant_id" {}
+variable "client_id" {}
+variable "subsrciption_id" {}
