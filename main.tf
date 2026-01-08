@@ -12,15 +12,11 @@ terraform {
 provider "azuread" {}
 
 resource "azuread_user" "thor" {
-  # Using your tenant domain as shared in your code
-  user_principal_name = "thor@junaidweb97outlook.onmicrosoft.com"
-
-  display_name  = "Thor"
-  mail_nickname = "thor"
-  account_enabled = true
-
-  # Flat password syntax for provider v2.44
-  password              = "P@ssw0rd-Thor-2026!"
+  user_principal_name  = "thor@junaidweb97outlook.onmicrosoft.com"
+  display_name         = "Thor"
+  mail_nickname        = "thor"
+  account_enabled      = true
+  password             = "P@ssw0rd-Thor-2026!"
   force_password_change = false
 }
 
