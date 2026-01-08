@@ -4,6 +4,7 @@ terraform {
       source  = "hashicorp/azuread"
       version = "~> 2.47"
     }
+
     random = {
       source  = "hashicorp/random"
       version = "~> 3.6"
@@ -12,8 +13,7 @@ terraform {
 }
 
 provider "azuread" {
-  tenant_id       = var.tenant_id
-  client_id       = var.client_id
-  client_secret   = var.client_secret
+  tenant_id = data.azurerm_client_config.current.tenant_id
 }
 
+data "azurerm_client_config" "current" {}
