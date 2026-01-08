@@ -1,15 +1,3 @@
-terraform {
-  required_providers {
-    azuread = {
-      source  = "hashicorp/azuread"
-      version = "~> 2.48"
-    }
-  }
-  required_version = ">= 1.5.0"
-}
-
-provider "azuread" {}
-
 resource "azuread_user" "thor" {
   user_principal_name = "thor@junaidweb97outlook.onmicrosoft.com"
   display_name        = "Thor"
