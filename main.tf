@@ -1,11 +1,9 @@
-data "azuread_client_config" "current" {}
+variable "domain" {
+  default = "junaidweb97outlook.onmicrosoft.com"
+}
 
 resource "azuread_user" "batman" {
-  user_principal_name   = "batman@\$junaidweb97outlook.onmicrosoft.com"
-  display_name          = "Batman"
-  mail_nickname         = "batman"
-
-  password              = random_password.batman.result
-  force_password_change = true
-  account_enabled       = true
+  user_principal_name = "batman@${var.domain}"
+  display_name        = "Batman"
+  password            = "SuperSecret123!"
 }
