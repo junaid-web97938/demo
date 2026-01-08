@@ -1,9 +1,10 @@
-variable "domain" {
-  default = "junaidweb97outlook.onmicrosoft.com"
-}
+resource "azuread_user" "thor" {
+  user_principal_name = "thor@junaidweb97outlook.onmicrosoft.com"
+  display_name        = "Thor"
+  mail_nickname       = "thor"
 
-resource "azuread_user" "batman" {
-  user_principal_name = "batman@${var.domain}"
-  display_name        = "Batman"
-  password            = "SuperSecret123!"
+  password = "P@ssw0rd-Thor-2026!"
+  force_password_change = false
+
+  account_enabled = true
 }
