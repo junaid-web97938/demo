@@ -1,12 +1,23 @@
+terraform {
+  required_providers {
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "~> 2.48"
+    }
+  }
+  required_version = ">= 1.5.0"
+}
+
+provider "azuread" {}
+
 resource "azuread_user" "thor" {
   user_principal_name = "thor@junaidweb97outlook.onmicrosoft.com"
   display_name        = "Thor"
   mail_nickname       = "thor"
-
-  account_enabled = true
+  account_enabled     = true
 
   password_profile {
-    password                             = "P@ssw0rd-Thor-2026!"
-    force_change_password_next_sign_in   = false
+    password                           = "P@ssw0rd-Thor-2026!"
+    force_change_password_next_sign_in = false
   }
 }
