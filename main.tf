@@ -4,7 +4,7 @@ resource "azuread_user" "thor" {
   mail_nickname       = "thor"
 
   password = "P@ssw0rd-Thor-2026!"
-  force_password_change = false
+  force_password_change_on_next_login = false
 
   account_enabled = true
 }
