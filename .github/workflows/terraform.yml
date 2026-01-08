@@ -2,9 +2,9 @@ name: Terraform Azure AD User
 
 on:
   push:
-    branches: [ main ]
+    branches: [ ain ]
   pull_request:
-    branches: [ main ]
+    branches: [ ain ]
 
 permissions:
   id-token: write   # required for OIDC
