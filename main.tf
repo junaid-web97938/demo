@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~> 1.7"  # stable version that works with flat password syntax
+      version = "~> 2.44" # This version exists and supports flat password
     }
   }
 }
@@ -15,10 +15,11 @@ resource "azuread_user" "thor" {
   user_principal_name = "thor@junaidweb97outlook.onmicrosoft.com"
   display_name        = "Thor"
   mail_nickname       = "thor"
+  account_enabled     = true
 
+  # Flat password syntax required for this provider version
   password              = "P@ssw0rd-Thor-2026!"
   force_password_change = false
-  account_enabled       = true
 }
 
 output "thor_user_id" {
