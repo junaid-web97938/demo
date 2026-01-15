@@ -1,21 +1,8 @@
-terraform {
-  required_providers {
-    azuread = {
-      source  = "hashicorp/azuread"
-      version = "~> 2.0"
-    }
-  }
-}
+resource "azuread_user" "user" {
+  user_principal_name = "${var.user_name}@${var.tenant_domain}"
+  display_name        = title(var.user_name)
+  mail_nickname       = var.user_name
 
-provider "azuread" {
-  # Uses Azure CLI or environment-based authentication
-}
-
-resource "azuread_user" "afridi" {
-  user_principal_name = "afridi@yourtenant.onmicrosoft.com"
-  display_name        = "Afridi"
-  mail_nickname       = "afridi"
-
-  password = "P@ssword12345!"
-  force_password_change = true
+  password                = var.user_password
+  force_password_change   = true
 }
