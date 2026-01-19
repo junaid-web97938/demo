@@ -1,4 +1,4 @@
-name: Terraform Azure OIDC
+name: Multi User creation
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform1:
+  terraformjob:
     runs-on: ubuntu-latest
 
     env:
