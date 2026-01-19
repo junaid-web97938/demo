@@ -1,5 +1,3 @@
-tenant_domain = "saadproject49gmail.onmicrosoft.com"
-
 users = {
   sad = {
     display_name = "sad"
