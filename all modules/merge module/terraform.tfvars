@@ -10,12 +10,14 @@ users = {
     password     = "StrongP@ss2!"
   }
 }
+  sup = {
+    display_name = "sup"
+    password     = "StrongP@ss2!"
+  }
+}
 
 service_principals = {
   app1 = {
     display_name = "sp-app-11"
-  }
-  app2 = {
-    display_name = "sp-app-22"
   }
 }
