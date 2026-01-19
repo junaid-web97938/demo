@@ -9,5 +9,4 @@ variable "users" {
     display_name = string
     password     = string
   }))
-  sensitive = true
 }
