@@ -8,6 +8,5 @@ module "users" {
 module "service_principals" {
   source = "../spmodule multiple"
 
-  tenant_domain      = var.tenant_domain
   service_principals = var.service_principals
 }
